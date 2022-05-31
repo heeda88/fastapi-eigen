@@ -1,0 +1,127 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock title %}
+{% block css %}
+	<style  type='text/css'>
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #565656;
+		}
+	</style>
+
+{% endblock css %}
+
+
+{% block content %}
+<div class='container'>
+	<video autoplay id='video_recoder'></video>
+</div>
+<div class='container'>
+	<audio controls id='audio_recoder'></audio>
+</div>
+{% endblock content %}
+
+
+
+{% block script %}
+
+<script>
+	// MediaDevice 엘리먼트 취득
+	const $audio = document.querySelector("#sound_recoder");
+	const $video = document.querySelector("#video_recoder");
+
+	// 마이크 MediaStream 취득(audio를 true로 설정)
+	navigator.mediaDevices.getUserMedia({audio: true})
+	.then((mediaStream)=>{
+			// Promise이므로 then으로 받아서 사용(async/await를 사용해도 된다.)
+
+			// 마이크에서 입력받은 MediaStream으로 오디오 재생
+			$audio.srcObject = mediaStream;
+			$audio.onloadedmetadata = (event)=>{
+					$audio.play();
+			}
+	})
+	.catch((err)=>{
+			console.error(`에러 발생: ${err}`);
+	});
+
+	navigator.mediaDevices.getUserMedia({video: true}).then((mediaStream)=>{
+		$video.srcObject =mediaStream;
+		$video.onloadedmetadata =(event) =>{
+			$video.autoplay();
+		}
+	})
+	.catch((err)=>{
+		console.error(`error occured: ${err}`)
+	});
+
+
+
+	var videoElement = document.querySelector('video');
+	var audioSelect = document.querySelector('select#audioSource');
+	var videoSelect = document.querySelector('select#videoSource');
+	
+	navigator.mediaDevices.enumerateDevices()
+		.then(gotDevices).then(getStream).catch(handleError);
+	
+	audioSelect.onchange = getStream;
+	videoSelect.onchange = getStream;
+	
+		function gotDevices(deviceInfos) {
+			for (var i = 0; i !== deviceInfos.length; ++i) {
+				var deviceInfo = deviceInfos[i];
+				var option = document.createElement('option');
+				option.value = deviceInfo.deviceId;
+				if (deviceInfo.kind === 'audioinput') {
+					option.text = deviceInfo.label ||
+						'microphone ' + (audioSelect.length + 1);
+					audioSelect.appendChild(option);
+				} else if (deviceInfo.kind === 'videoinput') {
+					option.text = deviceInfo.label || 'camera ' +
+						(videoSelect.length + 1);
+					videoSelect.appendChild(option);
+				} else {
+					console.log('Found one other kind of source/device: ', deviceInfo);
+				}
+			}
+		}
+	
+		function getStream() {
+			if (window.stream) {
+				window.stream.getTracks().forEach(function(track) {
+					track.stop();
+				});
+			}
+	
+			var constraints = {
+				audio: {
+					deviceId: {exact: audioSelect.value}
+				},
+				video: {
+					deviceId: {exact: videoSelect.value}
+				}
+			};
+	
+			navigator.mediaDevices.getUserMedia(constraints).
+				then(gotStream).catch(handleError);
+		}
+	
+		function gotStream(stream) {
+			window.stream = stream; // make stream available to console
+			videoElement.srcObject = stream;
+		}
+	
+		function handleError(error) {
+			console.log('Error: ', error);
+		}
+	
+
+</script>
+
+
+{% endblock script %}

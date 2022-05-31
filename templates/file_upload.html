@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',path='css/file_upload.css')}}">
+
+{% endblock css %}
+{% block content %}
+<div class='container'>
+	<div class='drag-area'>
+		<div class='icon'> 
+			<i class="fas fa-cloud-upload-alt"></i>
+		</div>
+		<header> Drag & Drop to Upload File</header>
+		<span> OR </span>
+		<button id='browser-btn'> Browse files</button>
+		<input type='file' hidden multiple>
+	</div>
+
+	<!--drag-area-->
+	<div class="upload-list-area">
+		<header> File Uploader List</header>
+		<section class="progress-area"> 
+
+		</section>
+
+		<section class="uploaded-area">
+
+		</section>
+
+	</div>
+
+	<button id='upload-btn' type='submit'> Upload files</button>
+</div>
+<!--container-->
+{% endblock content %}
+
+{% block script %}
+<script src="https://kit.fontawesome.com/0d93c00ae4.js" crossorigin="anonymous"></script>
+<script src="{{url_for('static', path='js/file_upload.js')}}"> </script>
+{% endblock script %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title> Create an Item </title>
+{% endblock title %}
+{% block content %}
+	<div class="container"> 
+	{% for error in errors %}
+	<div class="alert alert-danger" role="alert">
+		{{error}}
+	</div>
+	{% endfor %}
+		<form method="POST">
+			<div class="mb-3">
+				<label for="title" class="form-label">Title</label>
+				<input type="text" required class="form-control" name="title" placeholder="Enter Item title">
+			</div>
+			<div class="mb-3">
+				<label for="description" class="form-label">Description</label>
+				<textarea type="text" required class="form-control" name="description" placeholder="Enter Item Description"></textarea>
+			</div>
+			<div class="mb-3 form-check">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Private item</label>
+			</div>
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a class="btn btn-primary" href="/home">Cancel</a>
+		</form>
+	</div>
+{% endblock content %}

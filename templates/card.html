@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <img src="{{ url_for('static',path='images/Logo.png')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+		<h5 class='card-title'> {{citem.title[:8]}} </h5>
+    <p class="card-text">{{citem.description[:10]}}</p>
+		<a href="/detail/{{citem.id}}" class="btn btn-primary"> Read More</a>
+	</div>
+</div>

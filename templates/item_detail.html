@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	<title> Item Detatil</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container"> 
+	<h3> Item Dtatil</h3>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th scope="row">Title</th>
+				<td>{{item.title}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Description</th>
+				<td>{{item.description}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Date</th>
+				<td>{{item.create_date.strftime("%Y/%m/%d, %H:%M:%S")}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Owner</th>
+				<td>{{email}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock content %}

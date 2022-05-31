@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+
+psycopg2-binary
+python-dotenv
+sqlalchemy
+alembic
+
+pydantic
+passlib
+jinja2
+aiofiles
+
+python-multipart
+python-jose

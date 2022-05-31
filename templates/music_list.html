@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock title %}
+{% block css %}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{url_for('static',path='css/music_list.css')}}">
+	{% endblock css %}
+{% block content %}
+<div class="container">
+	<audio id="music">
+		Your browser does not support HTML5 Audio!
+	</audio>
+	<ul id="music-list">Playlist<br/><br/>
+		<li>
+			<div class="wrapper">
+				<div></div>
+				<div>Name</div>
+				<div>Artist</div>
+				<div></div>
+			</div>
+		</li>
+		<hr/>
+	</ul>
+	<div class="controll-panel">
+		<div class="center">
+			<span class="prev-btn controll-btn">
+				<i class="fas fa-step-backward"></i>
+			</span>	
+		</div>
+		<div class="center">
+			<span class="play-btn controll-btn">
+				<i class="far fa-play-circle"></i>
+			</span>
+			<span class="pause-btn controll-btn hidden">
+				<i class="far fa-pause-circle"></i>
+			</span>
+		</div>
+		<div class="center">
+			<span class="next-btn controll-btn">
+				<i class="fas fa-step-forward"></i>
+			</span>
+		</div>
+	</div>
+	<div class="progress-panel">
+		<div id="start-time">00:00</div>
+		<progress id="progress-bar" value="0" max="100"></progress>
+		<div id="end-time">00:00</div>
+	</div>
+</div><!--container-->
+{% endblock content %}
+{% block script %}
+	<script src="{{url_for('static',path='js/music_list.js')}}"></script>
+{% endblock script %}

@@ -1,0 +1,149 @@
+body {
+	background-color:#5256ad;
+}
+
+.container {
+	margin: 10% auto;
+	padding: 0px;
+	display : flex;
+	align-items : center;	
+	justify-content : center;
+	background :#5256ad;
+	flex-direction: column;
+}
+
+.drag-area {
+	margin: 0;
+	padding: 0;
+	border : 2px dashed #ffff;
+	height : 500px;
+	width : 100%;
+	border-radius: 5px;
+	display : flex;
+	align-items : center;
+	justify-content : center;
+	flex-direction: column;
+}
+
+.active {
+	border: 2px solid #ffff;
+}
+
+.drag-area .icon {
+	font-size: 100px;
+	color : #ffff;
+}
+
+.drag-area header {
+	font-size: 30px;
+	font-weight: 500;
+	color : #ffff;
+}
+
+.drag-area span {
+	font-size: 25px;
+	font-weight: 500;
+	color : #ffff;
+	margin : 10px 0 15px 0;
+}
+
+.drag-area button {
+	padding : 10px 25px;
+	font-size: 20px;
+	font-weight: 500;
+	border: none;
+	outline :none;
+	background : #ffff;
+	color: #5256ad;
+	border-radius: 5px;
+	cursor : pointer;
+}
+
+.upload-list-area {
+	margin: 20px 0px 0px 0px;
+	padding: 0px;
+	/* border : 2px dashed #ffff; */
+	width : 100%;
+	border-radius: 5px;
+	display : flex;
+	align-items : center;
+	justify-content : center;
+	flex-direction: column;
+
+}
+
+.upload-list-area header {
+	color : #6990f2;
+	font-size : 27px;
+	font-weight: 600;
+	text-align : center;
+}
+
+.upload-list-area section .row {
+	background :#e9f0ff;
+	margin-bottom: 10px;
+	list-style: none;
+	width : 100%;
+	padding : 20px 20px;
+	border-radius : 5px;
+}
+
+.upload-list-area i {
+	font-size : 14px;
+	color : #6990f2;
+}
+
+.upload-list-area span {
+	margin-left: 14px;
+	margin-right: 14px;
+	font-size : 14px;
+	color : #6990f2;
+}
+
+.progress-area {
+	width : 100%;
+}
+
+.progress-area .file-detail {
+	display : flex;
+	align-items : center;
+	justify-content : space-between;
+}
+
+.progress-area .file-progress-bar {
+	height : 10px;
+	width : 100%;
+	background : #ffffff;
+	margin-top : 10px;
+	border-radius: 2px;
+}
+.progress-area .file-progress {
+	height : 100%;
+	width : 0%;
+	background : #6990f2;
+	border-radius : inherit;
+}
+
+.uploaded-area {
+	width : 100%;
+	max-height: 400px;
+}
+.uploaded-area .file-detail {
+	display : flex;
+	align-items : center;
+	justify-content : space-between;
+}
+
+#upload-btn {
+	display : flex;
+	padding : 10px 25px;
+	font-size: 20px;
+	font-weight: 500;
+	margin-top : 10px;
+	border: none;
+	outline :none;
+	background : #ffff;
+	color: #5256ad;
+	border-radius: 5px;
+	cursor : pointer;
+}

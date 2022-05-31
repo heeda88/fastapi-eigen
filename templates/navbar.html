@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">
+      <img src="{{ url_for('static',path='images/windows8.png')}}" alt="Logo" width="40" height="40" >
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">Docs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/redoc">Redoc</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdownItem" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            File
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownItem">
+            <li><a class="dropdown-item" href="/file_upload">Upload File</a></li>
+            <li><a class="dropdown-item" href="#">Delete File</a></li>
+            <li><a class="dropdown-item" href="#">Update</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdownItem" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Music
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownItem">
+            <li><a class="nav-link" href="/music_list">Music_List</a></li>
+            <li><a class="nav-link" href="/music_play">Music_player</a></li>
+            <li><a class="nav-link" href="/music_widget">Music_widget</a></li>
+            <li><a class="nav-link" href="/music_recoder">Music_recoder</a></li>
+            <li><a class="nav-link" href="/music_stream">Music_stream</a></li>
+            <li><a class="dropdown-item" href="#">Update</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdownItem" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Stream
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownItem">
+            <li><a class="nav-link" href="/stream_default">stream_default</a></li>
+            <li><a class="nav-link" href="/stream_record">stream_record</a></li>
+            <li><a class="nav-link" href="/stream_z">stream_z</a></li>
+            <li><a class="dropdown-item" href="#">Others</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          
+        </li>
+        <li class="nav-item">
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdownAccount" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownAccount">
+            <li><a class="dropdown-item" href="/register">Register</a></li>
+            <li><a class="dropdown-item" href="/login">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdownItem" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Item
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownItem">
+            <li><a class="dropdown-item" href="/create_an_item">Create Item</a></li>
+            <li><a class="dropdown-item" href="#">Delete Item</a></li>
+            <li><a class="dropdown-item" href="#">Update</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
