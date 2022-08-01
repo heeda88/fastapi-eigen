@@ -15,7 +15,7 @@ class Settings:
 		self.DB_HOST=os.getenv('DB_HOST')
 		self.DB_PORT=os.getenv('DB_PORT')
 		self.DB_URL=f"{self.DB_TYPE}://{self.DB_USER}:{self.DB_PASW}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+		# self.DB_URL=f"sqlite:///./sql_app.db" # sqllite3
 		self.SC_KEY =os.getenv('SC_KEY')
 		self.PW_ENCODE='HS256'
-
 settings=Settings()
